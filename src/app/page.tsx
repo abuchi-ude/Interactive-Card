@@ -64,7 +64,7 @@ export default function InteractiveCard() {
     if (!nameValue.trim()) {
       newErrors.name = "Can't be blank";
     }
-    if (nameValue < '5') {
+    if (nameValue.trim().length < 5) {
       newErrors.name = "Name must be more than 5";
     }
     // You can add more specific validation here
@@ -84,7 +84,7 @@ export default function InteractiveCard() {
     if (!cvcValue.trim()) {
       newErrors.cvc = "Can't be blank";
     }
-    if (cvcValue < '3') {
+    if (cvcValue.trim().length < 3) {
       newErrors.cvc = "Must be up to 3 digit";
     }
 
