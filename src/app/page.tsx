@@ -103,27 +103,27 @@ export default function InteractiveCard() {
     }
   };
   return (
-    <main className="container font-mono h-screen md:flex md:flex-row md:gap-8">
+    <main className="container font-mono min-h-screen min-w-screen md:flex md:flex-row md:gap-8 justify-center items-center">
       {/* FIrst section */}
-      <section className="pt-6 section-one bg-cover bg-no-repeat bg-center bg-[url('../../public/bg-main-mobile.png')] h-[35vh] w-12/12 mx-auto md:w-1/3 md:h-auto">
-        <div className="flex flex-col shrink relative">
-          <div className='back-card mr-2 bg-[url("/bg-card-back.png")] bg-center bg-no-repeat bg-contain w-[300px] h-[165px] flex items-center justify-end mx-auto md:mt-[110%] md:ml-[40%] lg:w-[370px] lg:h-[200px] xl:w-[420px] xl:h-[230px] xl:mt-[75%] xxl:mt-[150%]'>
+      <section className="pt-6 section-one bg-cover bg-no-repeat  bg-center bg-[url('../../public/bg-main-mobile.png')] h-[33vh] w-12/12 mx-auto md:w-1/3 md:h-[100vh]">
+        <div className="flex flex-col shrink relative md:flex-col-reverse">
+          <div className='back-card mr-2 md:mr-0 md:ml-[50%] lg:w-[330px] lg:h-[220px] xl:w-[400px] xl:h-[250px] bg-[url("/bg-card-back.png")] bg-center bg-no-repeat bg-contain w-[300px] h-[165px] flex items-center justify-end mx-auto md:w-[250px] '>
             <p className="text-[10px] text-gray mr-[12%] md:text-[12px] lg:text-sm xl:text-base">
               {" "}
               {cvcValue ? cvcValue : "000"}{" "}
             </p>
           </div>
-          <div className='front-card p-[5%] ml-4 absolute z-1 top-[55%] bg-[url("/bg-card-front.png")] bg-center bg-no-repeat bg-contain w-[300px] h-[165px] mx-auto md:left-[20%] md:top-[15%] lg:w-[370px] lg:top-[10%] lg:h-[200px] xl:w-[420px] xl:h-[230px]'>
+          <div className='front-card p-[5%] ml-4 md:ml-[30%] lg:w-[330px] lg:h-[220px] xl:w-[400px] xl:h-[250px]  absolute md:static md:pt-[10%] z-1 top-[55%] bg-[url("/bg-card-front.png")] bg-center bg-no-repeat bg-contain w-[300px] h-[165px] mx-auto md:w-[250px]'>
             <Image
               src={cardLogo}
               alt="card-logo"
-              className="w-1/5 mb-4 lg:w-2/5"
+              className="w-1/5 lg:w-1/4"
             />
-            <div className="w-full flex flex-col shrink min-w-0 md:mt-[20%] mt-[20%] lg:mt-[10%]">
-              <p className="card-number text-xl md:text-2xl lg:text-[29px] xl:text-[32px] text-gray tracking-wider">
+            <div className="w-full flex flex-col shrink min-w-0 mt-[20%] lg:mt-[13%]">
+              <p className="card-number text-base lg:text-2xl xl:text-3xl  text-gray tracking-wider">
                 {cardValue ? cardValue : "0000 0000 0000 0000"}
               </p>
-              <div className="text-gray text-xs lg:text-sm xl:text-base  mt-2 flex justify-between uppercase ">
+              <div className="text-gray text-xs lg:text-sm xl:text-base mt-2 flex justify-between uppercase ">
                 <p className="truncate mr-4">
                   {nameValue ? nameValue : "JANE APPLESEED"}
                 </p>
@@ -137,10 +137,10 @@ export default function InteractiveCard() {
         </div>
       </section>
       {/* Second Section for form */}
-      <section className=" section-two mt-[14%] text-[15px] p-6 md:ml-[15%] md:w-1/2 md:h-auto md:flex md:items-center md:justify-center md:mt-0 xl:w-3/5 xl:ml-[10%]">
+      <section className=" section-two mt-[14%] text-[15px] p-6 md:ml-[10%] md:w-1/2 md:h-auto md:flex md:items-center md:justify-center md:m-auto md:mt-0 xl:w-3/5 xl:ml-[10%]">
         {!submit && (
           <form onSubmit={handleSubmit} className="md:w-full md:max-w-md">
-            <div className="form flex flex-col gap-4">
+            <div className="form flex flex-col gap-4 lg:mt-[12%] xl:mt-[15%]">
               {/* Cardholder Name */}
               <div className="flex flex-col">
                 <label

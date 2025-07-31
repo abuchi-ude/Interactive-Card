@@ -60,12 +60,6 @@
   .form input{
     font-size: 20px;
   }
-  .section-one .back-card{
-    margin-top: 100%;
-  }
-  .section-one .front-card{
-    top: 25%;
-  }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .form input::placeholder{
