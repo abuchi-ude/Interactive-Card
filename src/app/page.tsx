@@ -85,7 +85,7 @@ export default function InteractiveCard() {
       newErrors.cvc = "Can't be blank";
     }
     if (cvcValue < '3') {
-      newErrors.cvc = "Must be up to 3 digits";
+      newErrors.cvc = "Must be up to 3 digit";
     }
 
     // Set the new errors in state
@@ -107,13 +107,13 @@ export default function InteractiveCard() {
       {/* FIrst section */}
       <section className="pt-6 section-one bg-cover bg-no-repeat bg-center bg-[url('../../public/bg-main-mobile.png')] h-[40vh] w-12/12 mx-auto md:w-1/3 md:h-screen">
         <div className="flex flex-col shrink relative">
-          <div className='back-card mr-2 bg-[url("/bg-card-back.png")] bg-center bg-no-repeat bg-contain w-[300px] h-[165px] flex items-center  justify-end mx-auto md:mt-[80%] md:ml-[40%] lg:w-[250px]'>
+          <div className='back-card mr-2 bg-[url("/bg-card-back.png")] bg-center bg-no-repeat bg-contain w-[300px] h-[165px] flex items-center justify-end mx-auto md:mt-[110%] md:ml-[40%] lg:w-[370px] lg:h-[200px] xl:w-[420px] xl:h-[230px] xl:mt-[90%] xxl:mt-[150%]'>
             <p className="text-[10px] text-gray mr-[12%] md:text-[12px] lg:text-sm xl:text-base">
               {" "}
               {cvcValue ? cvcValue : "000"}{" "}
             </p>
           </div>
-          <div className='front-card p-[5%] ml-4 absolute z-1 top-[55%] bg-[url("/bg-card-front.png")] bg-center bg-no-repeat bg-contain w-[300px] h-[165px] mx-auto md:left-[20%] md:top-[7%]'>
+          <div className='front-card p-[5%] ml-4 absolute z-1 top-[55%] bg-[url("/bg-card-front.png")] bg-center bg-no-repeat bg-contain w-[300px] h-[165px] mx-auto md:left-[20%] md:top-[15%] lg:w-[370px] lg:h-[200px] xl:w-[420px] xl:h-[230px]'>
             <Image
               src={cardLogo}
               alt="card-logo"
