@@ -105,7 +105,7 @@ export default function InteractiveCard() {
   return (
     <main className="container font-mono h-screen md:flex md:flex-row md:gap-8">
       {/* FIrst section */}
-      <section className="pt-6 section-one bg-cover bg-no-repeat bg-center bg-[url('../../public/bg-main-mobile.png')] h-[40vh] w-12/12 mx-auto md:w-1/3 md:h-screen">
+      <section className="pt-6 section-one bg-cover bg-no-repeat bg-center bg-[url('../../public/bg-main-mobile.png')] h-[35vh] w-12/12 mx-auto md:w-1/3 md:h-auto">
         <div className="flex flex-col shrink relative">
           <div className='back-card mr-2 bg-[url("/bg-card-back.png")] bg-center bg-no-repeat bg-contain w-[300px] h-[165px] flex items-center justify-end mx-auto md:mt-[110%] md:ml-[40%] lg:w-[370px] lg:h-[200px] xl:w-[420px] xl:h-[230px] xl:mt-[75%] xxl:mt-[150%]'>
             <p className="text-[10px] text-gray mr-[12%] md:text-[12px] lg:text-sm xl:text-base">
@@ -137,7 +137,7 @@ export default function InteractiveCard() {
         </div>
       </section>
       {/* Second Section for form */}
-      <section className=" section-two mt-[14%] text-[15px] p-6 md:ml-[15%] md:w-1/2 md:h-screen md:flex md:items-center md:justify-center md:mt-0 xl:w-3/5 xl:ml-[10%]">
+      <section className=" section-two mt-[14%] text-[15px] p-6 md:ml-[15%] md:w-1/2 md:h-auto md:flex md:items-center md:justify-center md:mt-0 xl:w-3/5 xl:ml-[10%]">
         {!submit && (
           <form onSubmit={handleSubmit} className="md:w-full md:max-w-md">
             <div className="form flex flex-col gap-4">
