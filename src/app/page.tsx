@@ -1,5 +1,5 @@
 "use client";
-import { ChangeEvent, FormEvent, MouseEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import cardLogo from "../../public/card-logo.svg";
 import complete from "../../public/icon-complete.svg";
 import Image from "next/image";
@@ -36,19 +36,19 @@ export default function InteractiveCard() {
     setCardValue(formattedValue);
   };
   const handleMonth = (event: ChangeEvent<HTMLInputElement>) => {
-    const rawValue =event.target.value
+    const rawValue = event.target.value;
     const numericValue = rawValue.replace(/\D/g, "");
 
     setMonthValue(numericValue);
   };
   const handleYear = (event: ChangeEvent<HTMLInputElement>) => {
-     const rawValue =event.target.value
+    const rawValue = event.target.value;
     const numericValue = rawValue.replace(/\D/g, "");
 
     setYearValue(numericValue);
   };
   const handleCvc = (event: ChangeEvent<HTMLInputElement>) => {
-     const rawValue =event.target.value
+    const rawValue = event.target.value;
     const numericValue = rawValue.replace(/\D/g, "");
 
     setCvcValue(numericValue);
@@ -67,17 +67,16 @@ export default function InteractiveCard() {
     if (nameValue.trim().length < 5) {
       newErrors.name = "Name must be more than 5";
     }
-    // You can add more specific validation here
     if (!cardValue.trim() || cardValue.replace(/\s/g, "").length !== 16) {
       newErrors.card = "Card number must be 16 digits";
     }
-   const month = parseInt(monthValue, 10);
-  if (!monthValue.trim()) {
-  newErrors.month = "Can't be blank";
-  } 
-  if (isNaN(month) || month < 1 || month > 12) {
-  newErrors.month = "Invalid month";
-  }
+    const month = parseInt(monthValue, 10);
+    if (!monthValue.trim()) {
+      newErrors.month = "Can't be blank";
+    }
+    if (isNaN(month) || month < 1 || month > 12) {
+      newErrors.month = "Invalid month";
+    }
     if (!yearValue.trim()) {
       newErrors.year = "Can't be blank";
     }
@@ -88,10 +87,8 @@ export default function InteractiveCard() {
       newErrors.cvc = "Must be up to 3 digit";
     }
 
-    // Set the new errors in state
     setErrors(newErrors);
 
-    // If there are no errors, proceed with submission
     if (Object.keys(newErrors).length === 0) {
       setSubmit(true);
 
@@ -114,11 +111,7 @@ export default function InteractiveCard() {
             </p>
           </div>
           <div className='front-card p-[5%] ml-4 md:ml-[30%] lg:w-[330px] lg:h-[220px] xl:w-[400px] xl:h-[250px]  absolute md:static md:pt-[10%] z-1 top-[55%] bg-[url("/bg-card-front.png")] bg-center bg-no-repeat bg-contain w-[300px] h-[165px] mx-auto md:w-[250px]'>
-            <Image
-              src={cardLogo}
-              alt="card-logo"
-              className="w-1/5 lg:w-1/4"
-            />
+            <Image src={cardLogo} alt="card-logo" className="w-1/5 lg:w-1/4" />
             <div className="w-full flex flex-col shrink min-w-0 mt-[20%] lg:mt-[13%]">
               <p className="card-number text-base lg:text-2xl xl:text-3xl  text-gray tracking-wider">
                 {cardValue ? cardValue : "0000 0000 0000 0000"}
@@ -145,7 +138,7 @@ export default function InteractiveCard() {
               <div className="flex flex-col">
                 <label
                   htmlFor="name"
-                  className="text-xs font-bold uppercase text-violet-950 mb-1"
+                  className="text-xs sm:text-base font-bold uppercase text-violet-950 mb-1"
                 >
                   Cardholder Name
                 </label>
@@ -159,17 +152,18 @@ export default function InteractiveCard() {
                   placeholder="e.g. Jane Appleseed"
                   value={nameValue}
                   onChange={handleName}
-                  className="rounded-md border p-2 text-sm placeholder:text-gray-400"
+                  className="rounded-md  border p-2 text-sm placeholder:text-gray-400"
                 />
-                {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
-
+                {errors.name && (
+                  <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+                )}
               </div>
 
               {/* Card Number */}
               <div className="flex flex-col">
                 <label
                   htmlFor="card-number"
-                  className="text-xs font-bold uppercase text-violet-950 mb-1"
+                  className="text-xs sm:text-base font-bold uppercase text-violet-950 mb-1"
                 >
                   Card Number
                 </label>
@@ -184,7 +178,9 @@ export default function InteractiveCard() {
                   onChange={handleCard}
                   className="rounded-md border p-2 text-sm placeholder:text-gray-400"
                 />
-                {errors.card && <p className="text-red-500 text-xs mt-1">{errors.card}</p>}
+                {errors.card && (
+                  <p className="text-red-500 text-xs mt-1">{errors.card}</p>
+                )}
               </div>
 
               {/* Expiry and CVC */}
@@ -192,7 +188,7 @@ export default function InteractiveCard() {
                 <div className="flex-1">
                   <label
                     htmlFor="exp-date"
-                    className="text-xs font-bold uppercase text-violet-950 mb-1"
+                    className="text-xs sm:text-base font-bold uppercase text-violet-950 mb-1"
                   >
                     Exp. Date (MM/YY)
                   </label>
@@ -209,7 +205,11 @@ export default function InteractiveCard() {
                       onChange={handleMonth}
                       className="w-1/2 rounded-md border p-2 text-sm placeholder:text-gray-400"
                     />
-                    {errors.month && <p className="text-red-500 text-xs mt-1">{errors.month}</p>}
+                    {errors.month && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors.month}
+                      </p>
+                    )}
                     <input
                       type="text"
                       id="expYear"
@@ -222,14 +222,16 @@ export default function InteractiveCard() {
                       onChange={handleYear}
                       className="w-1/2 rounded-md border p-2 text-sm placeholder:text-gray-400"
                     />
-                    {errors.year && <p className="text-red-500 text-xs mt-1">{errors.year}</p>}
+                    {errors.year && (
+                      <p className="text-red-500 text-xs mt-1">{errors.year}</p>
+                    )}
                   </div>
                 </div>
 
                 <div className="flex-1">
                   <label
                     htmlFor="cvc"
-                    className="text-xs font-bold uppercase text-violet-950 mb-1"
+                    className="text-xs sm:text-base font-bold uppercase text-violet-950 mb-1"
                   >
                     CVC
                   </label>
@@ -245,7 +247,9 @@ export default function InteractiveCard() {
                     onChange={handleCvc}
                     className="w-full rounded-md border p-2 text-sm placeholder:text-gray-400"
                   />
-                  {errors.cvc && <p className="text-red-500 text-xs mt-1">{errors.cvc}</p>}
+                  {errors.cvc && (
+                    <p className="text-red-500 text-xs mt-1">{errors.cvc}</p>
+                  )}
                 </div>
               </div>
               <button className="text-white bg-violet-950 hover:bg-violet-800 py-3 text-sm rounded-lg mt-4">

@@ -15,61 +15,56 @@
   --color-gradient-end: hsl(278, 94%, 30%);
 }
 
-.form div{
+.form div {
   margin-bottom: 8px;
 }
- .form label{
-  font-size: 10px;
+.form label {
   font-weight: bold;
   color: hsl(278, 68%, 11%);
   margin-bottom: 4px;
-
 }
 
-
-.form input{
+.form input {
   border: 1px solid hsl(270, 3%, 87%);
   border-radius: 4px;
   padding: 2% 0px 2% 4%;
   font-size: 12px;
-
-} 
-.form input::placeholder{
+}
+.form input::placeholder {
   color: hsl(212, 12%, 71%);
   font-size: 12px;
 }
 
 @media (min-width: 635px) and (max-width: 767px) {
-  body{
+  body {
     display: flex;
     justify-content: center;
   }
 }
 @media (min-width: 1280px) and (max-width: 1439px) {
-  .form input::placeholder{
+  .form input::placeholder {
     font-size: 16px;
   }
-  .form input{
+  .form input {
     font-size: 16px;
   }
 }
 @media (min-width: 1440px) {
-  .form input::placeholder{
+  .form input::placeholder {
     font-size: 20px;
   }
-  .form input{
+  .form input {
     font-size: 20px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .form input::placeholder{
+  .form input::placeholder {
     font-size: 14px;
   }
-  .form input{
+  .form input {
     font-size: 14px;
   }
 }
-
 
 /* Custom component classes */
 /* .btn-primary {
